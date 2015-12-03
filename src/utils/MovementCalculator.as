@@ -1,10 +1,10 @@
-package utils 
+﻿package utils 
 {
 	import flash.geom.Point;
-	/**
-	 * ...
-	 * @author erwin henraat
-	 */
+
+	
+	
+	
 	public class MovementCalculator 
 	{
 		

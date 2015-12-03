@@ -1,15 +1,15 @@
-package actors 
+﻿package actors 
 {
 	import utils.Controller;	
 	import flash.events.Event;
-	/**
-	 * ...
-	 * @author erwin henraat
-	 */
+
+	
+	
 	public class Player extends Paddle 
 	{
 		private var controller:Controller;
 		private var speed:Number = 0;
+		private var maxSpeed:Number = 10;
 		
 		public function Player() 
 		{
@@ -23,13 +23,21 @@ package actors
 		}
 		private function loop(e:Event):void 
 		{
+			if (this.y <= 0)
+			{
+			this.y = stage.stageHeight;
+			}
+			if (this.y >= 550)
+			{
+			this.y = 0;
+			}
 			if (controller.up)
 			{
-				speed = -15;
+				speed = -maxSpeed;
 			}
 			else if(controller.down)
 			{
-				speed = 15;
+				speed = maxSpeed;
 			}else
 			{
 				if (speed > 0) speed--;
@@ -43,6 +51,7 @@ package actors
 			}
 			this.y += speed;
 		}
+
 		
 	}
 

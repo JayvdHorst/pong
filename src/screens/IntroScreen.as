@@ -1,4 +1,4 @@
-package screens 
+﻿package screens 
 {
 	import flash.events.Event;
 	import flash.text.TextField;
@@ -6,10 +6,10 @@ package screens
 	import flash.text.TextFieldAutoSize;
 	import utils.Controller;
 	import flash.events.KeyboardEvent;
-	/**
-	 * ...
-	 * @author erwin henraat
-	 */
+		
+	
+	
+	
 	public class IntroScreen extends Screen 
 	{
 		private var title:TextField;
@@ -34,7 +34,7 @@ package screens
 						
 			title = new TextField();
 			title.embedFonts = true;
-			title.text = "Pong";
+			title.text = "Candy Pong";
 			title.autoSize = TextFieldAutoSize.CENTER;			
 			title.setTextFormat(textFormat);		
 			

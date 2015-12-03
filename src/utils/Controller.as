@@ -1,13 +1,10 @@
-package utils 
+﻿package utils 
 {
 	import flash.display.Stage;
 	import flash.events.EventDispatcher;
 	import flash.ui.Keyboard;
 	import flash.events.KeyboardEvent;
 	/**
-	 * ...
-	 * @author erwin henraat
-	 * 
 	 * use constructor to set controls
 	 * use properties up, down and fire to check buttonstates
 	 * 
@@ -80,6 +77,7 @@ package utils
 				
 			}
 		}
+
 		
 	}
 

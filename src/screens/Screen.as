@@ -1,11 +1,10 @@
-package screens 
+﻿package screens 
 {
 	import flash.display.MovieClip;
 	import flash.text.TextFormat;
-	/**
-	 * ...
-	 * @author erwin henraat
-	 */
+
+	
+	
 	public class Screen extends MovieClip
 	{
 		[Embed(source = "../../lib/starjedi/Starjedi.ttf",
@@ -27,18 +26,18 @@ package screens
 			textFormat = new TextFormat();
 			textFormat.font = "jedi";
 			textFormat.size = 60;
-			textFormat.color = 0xffffff;
+			textFormat.color = 0xb998b1;
 			
 			
 			subFormat = new TextFormat();
 			subFormat.font = "jedi";
 			subFormat.size = 20;
-			subFormat.color = 0xff0000;
+			subFormat.color = 0xff59ac;
 			
 			scoreFormat = new TextFormat();
 			scoreFormat.font = "jedi";
 			scoreFormat.size = 40;
-			scoreFormat.color = 0xffffff;
+			scoreFormat.color = 0xff59ac;
 			
 		}
 		

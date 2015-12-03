@@ -1,4 +1,4 @@
-package
+﻿package
 {
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
@@ -8,10 +8,7 @@ package
 	import screens.IntroScreen;
 	import sounds.SoundPlayer;
 	
-	/**
-	 * ...
-	 * @author Erwin Henraat
-	 */
+
 	public class Main extends MovieClip 
 	{
 		private var gameScreen:GameScreen

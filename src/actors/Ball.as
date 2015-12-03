@@ -1,4 +1,4 @@
-package actors 
+﻿package actors 
 {
 	import flash.display.MovieClip;
 	import flash.events.Event;
@@ -7,10 +7,9 @@ package actors
 	import flash.utils.Timer;
 	import flash.events.TimerEvent;
 	import utils.MovementCalculator;
-	/**
-	 * ...
-	 * @author erwin henraat
-	 */
+		
+	
+	
 	public class Ball extends MovieClip 
 	{
 		private var _movement:Point;
@@ -55,7 +54,7 @@ package actors
 		
 		private function restart(e:TimerEvent):void 
 		{
-			_movement = MovementCalculator.calculateMovement(15 + Math.random() * 10, Math.random() * 360);
+			_movement = MovementCalculator.calculateMovement(9, Math.random() * 100);
 			if (_movement.x > 0 && _movement.x < 2) _movement.x += 2;
 			if (_movement.x < 0 && _movement.x > -2) _movement.x -= 2;
 		}

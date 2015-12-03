@@ -1,4 +1,4 @@
-package screens 
+﻿package screens 
 {
 	import actors.AI;
 	import actors.Ball;
@@ -12,14 +12,15 @@ package screens
 	import utils.MovementCalculator;
 	import screens.Scoreboard;
 	
-	/**
-	 * ...
-	 * @author erwin henraat
-	 */
+
+	
+	
+	
 	public class GameScreen extends Screen
 	{
 		private var balls:Array = [];
 		private var paddles:Array = [];
+		private var	Objects:Array = [];
 		private var scoreboard:Scoreboard;
 		static public const GAME_OVER:String = "game over";
 		static public const BALL_BOUNCE:String = "ballBounce";
@@ -30,7 +31,7 @@ package screens
 		private function init(e:Event):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
-				for (var i:int = 0; i < 2; i++) 
+				for (var i:int = 0; i < 1; i++) 
 			{
 				balls.push(new Ball());
 				addChild(balls[i]);
@@ -43,6 +44,8 @@ package screens
 			paddles.push(new AI());
 			paddles.push(new Player());
 			paddles[0].balls = balls;
+			
+			paddles[1].maxSpeed
 			for (i = 0; i < 2; i++) 
 			{
 				
@@ -57,8 +60,15 @@ package screens
 			addChild(scoreboard);
 			
 			this.addEventListener(Event.ENTER_FRAME, loop);
-		}		
-		
+		}
+		for(var m:int = 0; m < 2; m++)
+		{
+			var obstacles:MovieClip = new Obstacle();
+			Objects.push(new Objects());
+			addChild(obstacles);
+			obstacles.x = 275;
+			obstacles.y = Math.random()*300;
+		}
 		private function loop(e:Event):void 
 		{
 			checkCollision();
