@@ -20,7 +20,7 @@
 	{
 		private var balls:Array = [];
 		private var paddles:Array = [];
-		private var	Objects:Array = [];
+		private var	obstacles:Array = [];
 		private var scoreboard:Scoreboard;
 		static public const GAME_OVER:String = "game over";
 		static public const BALL_BOUNCE:String = "ballBounce";
@@ -45,7 +45,6 @@
 			paddles.push(new Player());
 			paddles[0].balls = balls;
 			
-			paddles[1].maxSpeed
 			for (i = 0; i < 2; i++) 
 			{
 				
@@ -56,22 +55,23 @@
 			
 			paddles[1].x = 100;
 			
+			for(var m = 0; m < 2; m++)
+			{
+				obstacles.push(new Obstacle());
+				addChild(obstacles[m]);
+				obstacles[m].x = Math.random()*stage.stageWidth;
+				obstacles[m].y = Math.random()*stage.stageHeight;
+			}
+			
 			scoreboard = new Scoreboard();
 			addChild(scoreboard);
 			
 			this.addEventListener(Event.ENTER_FRAME, loop);
 		}
-		for(var m:int = 0; m < 2; m++)
-		{
-			var obstacles:MovieClip = new Obstacle();
-			Objects.push(new Objects());
-			addChild(obstacles);
-			obstacles.x = 275;
-			obstacles.y = Math.random()*300;
-		}
 		private function loop(e:Event):void 
 		{
 			checkCollision();
+			
 		}	
 		private function checkCollision():void 
 		{
@@ -128,7 +128,9 @@
 				removeChild(balls[i]);
 			}
 			balls.splice(0, balls.length);
+			obstacles.splice(0, obstacles.length);
 		}
+		
 	}
 
 }
