@@ -11,6 +11,16 @@
 		private var speed:Number = 0;
 		private var maxSpeed:Number = 10;
 		
+		public function get paddle_speed():Number
+		{
+			return maxSpeed;
+		}
+		public function set paddle_speed(mSpeed:Number):void
+		{
+			maxSpeed= mSpeed;
+			trace(maxSpeed);
+		}
+		
 		public function Player() 
 		{
 			this.addEventListener(Event.ADDED_TO_STAGE, init);		

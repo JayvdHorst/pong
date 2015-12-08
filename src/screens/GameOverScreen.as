@@ -7,10 +7,10 @@
 	import flash.events.KeyboardEvent;
 	import flash.utils.Timer;
 	import flash.events.TimerEvent;
-	/**
-	 * ...
-	 * @author erwin henraat
-	 */
+			
+	
+	
+	
 	public class GameOverScreen extends Screen 
 	{
 		private var title:TextField;
@@ -28,7 +28,7 @@
 						
 			title = new TextField();
 			title.embedFonts = true;
-			title.text = "game won";
+			title.text = "game over";
 			title.autoSize = TextFieldAutoSize.CENTER;			
 			title.setTextFormat(textFormat);		
 			

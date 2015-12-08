@@ -11,10 +11,7 @@
 	import flash.geom.Point;
 	import utils.MovementCalculator;
 	import screens.Scoreboard;
-	
 
-	
-	
 	
 	public class GameScreen extends Screen
 	{
@@ -45,6 +42,9 @@
 			paddles.push(new Player());
 			paddles[0].balls = balls;
 			
+			paddles[1].paddle_speed += 3;
+			trace(paddles[1].paddle_speed)
+			
 			for (i = 0; i < 2; i++) 
 			{
 				
@@ -53,14 +53,16 @@
 			}	
 			paddles[0].x = stage.stageWidth - 100;
 			
+			
+			
 			paddles[1].x = 100;
 			
 			for(var m = 0; m < 2; m++)
 			{
 				obstacles.push(new Obstacle());
 				addChild(obstacles[m]);
-				obstacles[m].x = Math.random()*stage.stageWidth;
-				obstacles[m].y = Math.random()*stage.stageHeight;
+				obstacles[m].x = 275;
+				obstacles[m].y = Math.random()*stage.stageHeight-200;
 			}
 			
 			scoreboard = new Scoreboard();
