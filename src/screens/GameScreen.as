@@ -1,6 +1,7 @@
 ﻿package screens 
 {
 	import actors.AI;
+	import actors.PowerUp;
 	import actors.Ball;
 	import actors.Paddle;
 	import actors.Player;

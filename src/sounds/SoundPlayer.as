@@ -7,10 +7,7 @@
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	import screens.*;
-	/**
-	 * ...
-	 * @author erwin henraat
-	 */
+
 	public class SoundPlayer 
 	{
 		private var _sounds:Array = [];
