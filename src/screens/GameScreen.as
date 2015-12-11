@@ -18,13 +18,14 @@
 	{
 		private var balls:Array = [];
 		private var paddles:Array = [];
+		private var powerups:Array = [];
 		private var	obstacles:Array = [];
 		private var scoreboard:Scoreboard;
 		static public const GAME_OVER:String = "game over";
 		static public const BALL_BOUNCE:String = "ballBounce";
 		public function GameScreen() 
 		{
-			this.addEventListener(Event.ADDED_TO_STAGE, init);			
+			this.addEventListener(Event.ADDED_TO_STAGE, init);
 		}				
 		private function init(e:Event):void 
 		{
@@ -54,17 +55,40 @@
 			}	
 			paddles[0].x = stage.stageWidth - 100;
 			
-			
-			
 			paddles[1].x = 100;
 			
-			for(var m = 0; m < 2; m++)
+			/*if(powerups.length < 2)
+			{
+				if(Math.random() < 1/200 )
+				{
+					var randomXPowerup:Number = 20 + Math.random() * 360;
+					var randomYPowerup:Number = 20 + Math.random() * 160;
+					var newPowerup:PowerArt = new PowerArt();
+					newPowerup.x = randomXPowerup;
+					newPowerup.y = randomYPowerup;
+					powerups.push(newPowerup);
+					addChild(newPowerup);
+				}
+				
+			}*/
+
+			/*for(var p = 0; p < 1; p++)
+			{
+				powerups.push(new PowerArt());
+				addChild(powerups[p])
+				powerups[p].x = 275;
+				powerups[p].y = 100;
+			}*/
+	
+			
+			for(var m = 0; m < 1; m++)
 			{
 				obstacles.push(new Obstacle());
 				addChild(obstacles[m]);
 				obstacles[m].x = 275;
-				obstacles[m].y = Math.random()*stage.stageHeight-200;
+				obstacles[m].y = 200;
 			}
+
 			
 			scoreboard = new Scoreboard();
 			addChild(scoreboard);
@@ -122,7 +146,7 @@
 			}
 			
 		}
-			
+		
 		private function destroy():void
 		{
 			for (var i:int = 0; i < balls.length; i++) 
@@ -132,6 +156,30 @@
 			}
 			balls.splice(0, balls.length);
 			obstacles.splice(0, obstacles.length);
+			
+				for(var p:int = powerups.length-1; p>= 1; p--){
+				if(balls[i].hitTestObject(powerups[p])) 
+				{
+					removeChild(powerups[p]);
+					powerups.splice(p,1);
+				}
+				
+			}
+			
+			/*var p:int = powerups.length 1;
+			var powerup:PowerArt;
+			while(p > -1)
+			{
+				powerup = powerups[p];
+				if (balls[i].hitTestObject(powerups[p]))
+				{
+					removeChild(powerup);
+					powerups.splice(p, 1);
+					
+				}
+				trace("gelukt")
+				
+			}*/
 		}
 		
 	}

@@ -61,14 +61,14 @@
 			start.addEventListener(Event.ENTER_FRAME, loop);
 			
 			
-			stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+			stage.addEventListener(KeyboardEvent.KEY_UP, onKeyIsUp);
 		}
 		
-		private function onKeyUp(e:KeyboardEvent):void 
+		private function onKeyIsUp(e:KeyboardEvent):void 
 		{
 			if (e.keyCode == 32) {
 				start.removeEventListener(Event.ENTER_FRAME, loop);		
-				stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+				stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyIsUp);
 				dispatchEvent(new Event(START_GAME));
 				
 			}

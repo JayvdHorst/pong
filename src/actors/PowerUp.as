@@ -37,7 +37,7 @@
 			while(j > -1)
 			{
 				powerup = powerups[j];
-				if ( PixelPerfectCollisionDetection.isColliding( avatar, collectible, this, true))
+				if ( PixelPerfectCollisionDetection.isColliding( player, powerup, this, true))
 				{
 					removeChild(powerup);
 					powerups.splice(j, 1);
